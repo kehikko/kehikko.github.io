@@ -5,7 +5,7 @@
 Howto setup this framework for a new project.
 
 # Files 
-Kernel searches it's basic setup files from `config/`-directory in project root folder. To be exactly specific, kernel searches these files from `<kernel.php>/../config`-directory.
+Kernel searches it's basic setup files from `config/`-directory in project root folder. To be exactly specific, kernel searches these files from `<kernel.php>/../config/`-directory.
 
 Kernel needs some basic setup files in order to work. These two files are mandatory:
 
