@@ -1,3 +1,5 @@
+---
+---
 Controllers are found under routes.
 They contain the logic for all calls made to every route.
 
@@ -26,15 +28,15 @@ example: # url: /test/{slug1}/
 ## Twig Templates
 *views/index.html*
 ```html
-\{% extends 'base.html' %}
-\{% block content %}
+{% extends 'base.html' %}
+{% block content %}
 
-\{% endblock content %}
+{% endblock content %}
 ```
 *views/test-template.html*
 ```html
-\{% extends 'base.html' %}
-\{% block content %}
+{% extends 'base.html' %}
+{% block content %}
 
-\{% endblock content %}
+{% endblock content %}
 ```
