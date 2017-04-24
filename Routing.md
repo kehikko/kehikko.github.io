@@ -1,6 +1,7 @@
 ---
 ---
 
+# Routing
 In code and templates routes are written in the form ***mainroutename:subroutename***.
 
 The first part (before colon) defines the directory under routes where routing will go next.
