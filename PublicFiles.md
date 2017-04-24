@@ -1,3 +1,5 @@
+---
+---
 
 Public files are files that are directly exposed and accessible from site URL
 (static files).

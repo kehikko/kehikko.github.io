@@ -1,3 +1,5 @@
+---
+---
 
 In code and templates routes are written in the form ***mainroutename:subroutename***.
 
@@ -55,6 +57,7 @@ example: # url: /test/{slug1}/
 ## From Twig template
 ### Rendering
 ```html
+{% raw %}
 <div class="index-content">
     <!-- this will render index action from route test into the twig template -->
     {{ render('text:index') }}
@@ -64,9 +67,11 @@ example: # url: /test/{slug1}/
 <div class="example-content">
     {{ render('test:example', { 'slug1': 'slug1value' }, { 'GET1': 'value1' }) }}
 </div>
+{% endraw %}
 ```
 ### Links
 ```html
+{% raw %}
 <!-- this will create a link to index action of route test -->
 <a href="{{ route('test:index') }}">link</a>
 
@@ -74,6 +79,7 @@ example: # url: /test/{slug1}/
      the link url will look something like this:
      /test/slug1value/?GET1=value1 -->
 <a href="{{ route('test:example', { 'slug1': 'slug1value' }, { 'GET1': 'value1' }) }}">link</a>
+{% endraw %}
 ```
 ## From controller code
 ```php

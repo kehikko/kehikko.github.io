@@ -1,3 +1,5 @@
+---
+---
 How to use databases via [Doctrine](http://docs.doctrine-project.org/) in this framework.
 SQL entity manager and MongoDB document manager are supported.
 

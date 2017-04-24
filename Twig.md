@@ -1,3 +1,6 @@
+---
+---
+
 [Twig](https://twig.sensiolabs.org/) is used for templating as default. For Twig installation, see [Setup](Setup#twig).
 
 # Methods exposed to templates

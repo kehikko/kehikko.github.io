@@ -1,3 +1,5 @@
+---
+---
 # Methods
 
 ## getInstance() *static*

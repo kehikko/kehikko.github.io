@@ -1,3 +1,6 @@
+---
+---
+
 Simple translations loading from yaml files is implemented.
 They use *lang* variable from [configuration](Configuration).
 

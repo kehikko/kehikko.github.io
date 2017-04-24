@@ -1,3 +1,5 @@
+---
+---
 # config.yaml
 For a working setup, you need a `config/config.yaml`.
 
