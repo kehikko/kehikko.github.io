@@ -1,5 +1,3 @@
----
----
 Controllers are found under routes.
 They contain the logic for all calls made to every route.
 
@@ -24,19 +22,4 @@ example: # url: /test/{slug1}/
     pattern: '/{slug1}'
     controller: 'Test'
     action: 'example'
-```
-## Twig Templates
-*views/index.html*
-```html
-{% extends 'base.html' %}
-{% block content %}
-
-{% endblock content %}
-```
-*views/test-template.html*
-```html
-{% extends 'base.html' %}
-{% block content %}
-
-{% endblock content %}
 ```
