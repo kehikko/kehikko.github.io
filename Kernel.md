@@ -1,5 +1,6 @@
 ---
 ---
+
 # Methods
 
 ## getInstance() *static*
@@ -88,7 +89,7 @@ Pop *$count* items from history and return last one popped.
 Disable current request from being saved into history (session data).
 
 ## createTempFile($postfix = null)
-Create a temporary file that will be removed when request is finished.
+Create a temporary file that will be removed when request is finished (in kernel destructor).
 
 * ⇒ `string $postfix` Append this string at the end of the filename
 * ⤶ `string` Filename

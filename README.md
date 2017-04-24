@@ -1,6 +1,7 @@
 ---
 ---
-# framework
+
+# kehikko
 Simple framework for technical sites.
 
 Documentation first, conversion from svn -> git later.

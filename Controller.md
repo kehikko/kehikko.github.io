@@ -1,5 +1,8 @@
 ---
 ---
+
+# The *C* from [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
+
 Controllers are found under routes.
 They contain the logic for all calls made to every route.
 
