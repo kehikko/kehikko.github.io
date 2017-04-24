@@ -1,0 +1,37 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+body {
+	background: #ccc;
+}
+
+.main-content {
+	background: #fff;
+}
+
+.page-header {
+	text-align: left;
+	max-width: 64rem;
+	padding: 1rem 6rem 4rem 6rem;
+	margin: 0 auto;
+	background: #159957;
+}
+
+.page-navigation {
+	background: #f3f6fa;
+	float: right;
+}
+
+.page-navigation>a {
+	background: #efefef;
+	padding: 10px;
+	margin: 2px;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.page-navigation>a:hover {
+	background: #ccc;
+}

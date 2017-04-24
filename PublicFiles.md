@@ -41,8 +41,8 @@ when you modify your main `config/route.yaml` file.
 
 
 ### Examples
-```html
+```html{% raw %}
 <a href="{{ asset('docs/my.pdf') }}">My PDF doc</a>
 <img src="{{ image('logo.png') }}" />
 <img src="{{ image('test:custom.png') }}" />
-```
+{% endraw %}```

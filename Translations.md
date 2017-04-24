@@ -72,14 +72,14 @@ de:
 
 # Usage Examples
 ## From Twig template
-```html
+```html{% raw %}
 <button type="button">{{ tr('actions/save') }}</button>
 <!-- this will render example action from route test giving slug1 value slug1value
      and input (GET) parameter GET1 value value1 -->
 <p class="message">
     {{ tr('msg/my_message', username()) }}
 </p>
-```
+{% endraw %}```
 ## From controller code
 ```php
 class TestController extends Controller
