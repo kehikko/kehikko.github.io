@@ -1,6 +1,9 @@
 ---
 ---
 
+# Kernel
+Everything goes through the kernel.
+
 # Methods
 
 ## getInstance() *static*
