@@ -48,14 +48,14 @@ Works like php [syslog()](http://php.net/manual/en/function.syslog.php) function
 additional tags can be given.
 
 Levels:
-* LOG_EMERG:	system is unusable
-* LOG_ALERT:	action must be taken immediately
-* LOG_CRIT:	critical conditions
-* LOG_ERR:	error conditions
-* LOG_WARNING:	warning conditions
-* LOG_NOTICE:	normal, but significant, condition
-* LOG_INFO:	informational message
-* LOG_DEBUG:	debug-level message
+* ***LOG_EMERG***:	system is unusable
+* ***LOG_ALERT***:	action must be taken immediately
+* ***LOG_CRIT***:	critical conditions
+* ***LOG_ERR***:	error conditions
+* ***LOG_WARNING***:	warning conditions
+* ***LOG_NOTICE***:	normal, but significant, condition
+* ***LOG_INFO***:	informational message
+* ***LOG_DEBUG***:	debug-level message
 
 Any (*string*) arguments given after the first two are
 taken as tags for this message.
