@@ -58,7 +58,7 @@ Levels:
 * ***LOG_DEBUG***:	debug-level message
 
 Any (*string*) arguments given after the first two are
-taken as tags for this message.
+taken as tags for this message. Tags can be used to sort and filter messages afterwards.
 
 * ⇒ `int $level` Message severity level, see http://php.net/manual/en/function.syslog.php
 * ⇒ `string $message` Message to write
