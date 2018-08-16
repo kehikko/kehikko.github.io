@@ -10,13 +10,15 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
-    <section class="page-header">
-      <section class="page-navigation">
-        {% include navigation.html %}
-      </section>
-      <h1 class="project-name">kehikko</h1>
-      a word that means framework in finnish
-    </section>
+    <header>
+      <a href="{{ site.url }}">
+        <h1 class="header-title">kehikko</h1>
+      </a>
+      <p class="header-description">
+        simple framework for technical sites and a word that means framework in finnish
+      </p>
+      {% include navigation.html %}
+    </header>
 
     <section class="main-content">
       {{ content }}
