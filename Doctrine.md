@@ -12,6 +12,24 @@ Doctrine with this framework.
 At least some basic knowledge of SQL and/or MongoDB and Doctrine
 is required.
 
+# Installation
+
+## SQL
+
+```sh
+sudo apt install php-mysql
+composer require kehikko/data
+composer require doctrine/orm
+```
+
+## MongoDB
+
+```sh
+sudo apt install php-mongodb
+composer require kehikko/data
+composer require doctrine/mongodb
+```
+
 # SQL
 * [Doctrine 2 ORM](http://docs.doctrine-project.org/projects/doctrine-orm/)
 
@@ -35,8 +53,7 @@ doctrine:
 See Doctrine [Installation and Configuration](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/configuration.html) for more.
 
 ## Command-Line
-Command `doctrine` is needed.
-In Ubuntu 16.04 it can can be installed with following command:
+Install doctrine:
 ```sh
 apt install php-doctrine-dbal php-doctrine-orm
 ```
