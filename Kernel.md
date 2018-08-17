@@ -97,7 +97,7 @@ Levels:
 Any (*string*) arguments given after the first two are
 taken as tags for this message. Tags can be used to sort and filter messages afterwards.
 
-## msg($type, $message)
+## msg($type, $message) *static*
 * ⇒ `string $type` Message type
 * ⇒ `string $message` Message to write
 * ⤶ `string` Will always return the message given
@@ -109,9 +109,12 @@ to be shown on the next page load for current browser session.
 These messages are usually rendered in `views/messages.html`.
 
 Following types, though not restricted to, can be used:
-*success*, *error*, *warning*, *info*
+* *success*
+* *error*
+* *warning*
+* *info*
 
-## getConfigValue(...)
+## getConfigValue(...) *static*
 * ⤶ `mixed` Value of the given key set in config
 
 Get value from configuration or null if value with given key-chain is not found.
@@ -120,46 +123,46 @@ Give chain of keys as parameters.
 Example:
 ```php
 /* returns true or false */
-$kernel->getConfigValue('setup', 'debug');
+kernel::getConfigValue('setup', 'debug');
 /* returns whole setup array */
-$kernel->getConfigValue('setup');
+kernel::getConfigValue('setup');
 ```
 
-## historyPop($count = 0)
+## historyPop($count = 0) *static*
 * ⇒ `int $count` Items to pop from history before returning value popped
 * ⤶ `string` Popped value
 
 Pop *$count* items from history and return last one popped.
 
-## historyDisable()
+## historyDisable() *static*
 Disable current request from being saved into history (session data).
 
-## createTempFile($postfix = null)
+## createTempFile($postfix = null) *static*
 * ⇒ `string $postfix` Append this string at the end of the filename
 * ⤶ `string` Filename
 
 Create a temporary file that will be removed when request is finished (in kernel destructor).
 
-## url($path = false)
+## url($path = false) *static*
 * ⇒ `string $path` Append this string at the end of the URL
 * ⤶ `string` URL
 
 Create manual URL that is prepended with site assets path.
 
-## getCacheInstance()
+## getCacheInstance() *static*
 * ⤶ `mixed` Current cache instance or *null* if cache is not available
 
 Get current cache instance.
 This is most probably an instance of *phpfastcache*.
 
-## yaml_read($file, $ttl = 600) static
+## yamlRead($file, $ttl = 600) *static*
 * ⇒ `string $file` Filename of YAML-file to read
 * ⇒ `int $ttl` TTL for caching file contents
 * ⤶ `mixed` Data read from file or *false* on errors
 
 Read data from YAML-file.
 
-## yaml_write($file, $data) static
+## yamlWrite($file, $data) *static*
 * ⇒ `string $file` Filename of YAML-file to be written
 * ⇒ `mixed $data` Data to write into YAML-file
 * ⤶ `bool` *true* on success, *false* on failure

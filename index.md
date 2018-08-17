@@ -146,3 +146,159 @@ project-root/
             ...
     kehikko # command line tool to do different system tasks
 ```
+
+# Larger example
+
+## Creating a new module
+* Create directory `modules/GoodestCode`
+* Create class file `GC.php` in that directory
+* This class will use namespace `GoodestCode` (in this use-case it is the same as directory name under `modules` so autoloader will find it without any configuration)
+* This class should extend class `\Core\Module` so we get some already existing functionality as base for this model
+    * See: <a href="CoreModule">\Core\Module</a>
+    * You can also check the code in `vendor/kehikko/core/Module.php`
+* Add public function called `who()` to this class that takes single parameter (string) and returns some nice string including the parameter
+
+Now you should have a simple model class in `modules/GoodestCode/GC.php`:
+```php
+<?php
+
+namespace GoodestCode;
+
+class GC extends \Core\Module
+{
+    public function who(string $name)
+    {
+        return 'Who is the goodest coder? Who? You are, ' . $name . ', you are!';
+    }
+}
+```
+
+## Creating a new controller
+* Create directory `routes/gc`
+    * Create directory `routes/gc/controllers`
+* Create class file `routes/gc/controller/GooderCodeController.php`
+* This class does not use namespacing but must extend `\Core\Controller`
+* Add a public function called `whoAction()` to this class that too takes a single parameter (string)
+    * Actions should usually return value using `$this->render(TEMPLATE-NAME, PARAMETERS-ARRAY)`
+    * In this example parameters must include what is returned by previously created `\GoodestCode\GC::who()` with the parameter given to this method
+
+Now you should have a simple controller class in `routes/gc/controllers/GooderCodeController.php`:
+```php
+<?php
+
+class GooderCodeController extends \Core\Controller
+{
+    public function whoAction(string $name)
+    {
+        $gc = new \GoodestCode\GC();
+
+        $params = array('who' => $gc->who($name));
+
+        return $this->render('goodcode.html', $params);
+    }
+}
+```
+
+## Creating V from MVC
+* Create directory called **views** under **routes/gc** created previously
+* Create new template file called **goodcode.html**
+    * This uses twig templating: https://twig.symfony.com/
+
+This is how the template could look like:
+```twig
+<h4>{{ who }}</h4>
+```
+
+## Setting up routing
+Now we need to set up routing so it knows how to serve the page we just created.
+This is pretty simple in current case, so this description will be short.
+
+Add base route to file **config/route-local.yml** (create this file if it does not exist):
+```yaml
+gc: # this is the directory under routes
+  pattern: /goodcode # this is the base url for this route
+```
+
+Add subroute to file **routes/gc/route.yml** (create this file if it does not exist):
+```yaml
+who: # this is for pointing to this route elsewhere from the code
+  pattern: /who/{name} # this is the url after base url
+  controller: GooderCode # guess what this means
+  action: who # and where this leads
+```
+
+Difference between **route-local.yml** and **route.yml** in both locations is that the local one
+should not be added to version control (git) and the other should. So changes in the local one
+are just local to your own development environment and the changes in the other are distributed
+to everyone. Using one or another depends highly on the use-case. Testing should be always done in
+the local one of course so it does not mess up example production servers!
+
+Now you should be able to see the page in your development host: **http://YOUR-DEV-HOST/goodcode/who/NAME-PARAM/**
+
+## Some extended twig usage
+Add new action to the previous controller, add new subroute pointing to it and create new view for it:
+
+Action:
+```php
+    public function whosAction()
+    {
+        $params = array();
+        $params['names'] = array('ville', 'jaakko', 'pekka', 'sami');
+        return $this->render('goodcodes.html', $params);
+    }
+```
+
+Add to **routes/gc/route.yml**:
+```yaml
+whos:
+  pattern: /whos
+  controller: GooderCode
+  action: whos
+```
+
+New view **views/goodcodes.html**:
+* This view must extend **base.html** and put its contents in block called **content**
+  * You can check **views/base.html** in project root to see what is in there
+
+```twig
+{% raw %}{% extends "base.html" %}
+
+{% block content %}
+  {% for name in names %}
+    {{ render('who', { name: name }) }}
+  {% endfor %}
+{% endblock %}{% endraw %}
+```
+
+From here you can see that the controller defined at start can be also called from another view using **render()**
+in which case it will be rendered in that position in html. This has many uses, making views cleaner by dividing
+them in smaller pieces (also see: https://twig.symfony.com/doc/2.x/tags/include.html), collecting many views into one
+and so on.
+
+## Now for the hard one
+You must create a new view, without any more examples, that fetches contents of **config/tasks.yml** and renders those
+tasks into html table under url **/goodcode/tasks/**. Even though this is a simple assignment, remember to make it
+using the MVC architecture! Don't skip steps just because it would be easier in this particular assignment. All letters from MVC must be used. Also the previous code must still work as it did before.
+
+Contents example to put into **config/tasks.yml**:
+```yaml
+tasks:
+  - label: Create model
+    deadline: first
+  - label: Create controller
+    deadline: second
+  - label: Create view
+    deadline: third
+```
+
+You can load the yaml into an array in php using following code snippet:
+```php
+$kernel = \kernel::getInstance();
+$data = $kernel->yaml_read($kernel->expand('{path:config}/tasks.yml'));
+```
+
+Hint: adding class **table** to the table in html makes it bit prettier to start with:
+```html
+<table class="table">
+...
+```
