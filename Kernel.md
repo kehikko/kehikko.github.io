@@ -12,9 +12,9 @@ Everything goes through the kernel.
 Get kernel singleton by calling `kernel::getInstance()`.
 Use this when there is no other way of accessing kernel:
  from static methods and classes that are not subclasses of
-*Controller* or *AbstractModule*.
+`\Core\Controller` or `\Core\Module`.
 
-In controllers and subclasses of *AbstractModule* you can use `$this->kernel`.
+In controllers and subclasses of `\Core\Module` you can use `$this->kernel`.
 
 ## debug() *static*
 * ⤶ `bool` *true* if *debug* is set to *true* in config
