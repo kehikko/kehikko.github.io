@@ -19,6 +19,12 @@ In controllers and subclasses of *AbstractModule* you can use `$this->kernel`.
 ## debug() *static*
 * ⤶ `bool` *true* if *debug* is set to *true* in config
 
+## emit($parent, $name) *static*
+* ⇒ `string $parent` Parent (class) emiting this signal
+* ⇒ `string $name` Name of signal
+
+Emit a signal. Usually you should use `\Core\Module::emit()` for this.
+
 ## expand($content, $vars = null) *static*
 * ⇒ `string $content` String where to expand variables
 * ⇒ `array $vars` Key-value paired array of optional extra variables to expand
@@ -168,3 +174,13 @@ Read data from YAML-file.
 * ⤶ `bool` *true* on success, *false* on failure
 
 Write data to YAML-file.
+
+# Signals
+
+## kernel:log
+* ⇒ `string $message` Message logged
+* ⇒ `int $level` [syslog()](http://php.net/manual/en/function.syslog.php) priority level
+* ⇒ `int $timestamp` Timestamp from time()
+* ⇒ `string $address` Remote address (from `$_SERVER['REMOTE_ADDR']`) or `console`
+* ⇒ `int $port` Server port to which the connection was made (from `$_SERVER['SERVER_PORT']`)
+* ⇒ `string $session_id` Session ID

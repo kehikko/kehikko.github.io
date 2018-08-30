@@ -274,31 +274,3 @@ From here you can see that the controller defined at start can be also called fr
 in which case it will be rendered in that position in html. This has many uses, making views cleaner by dividing
 them in smaller pieces (also see: https://twig.symfony.com/doc/2.x/tags/include.html), collecting many views into one
 and so on.
-
-## Now for the hard one
-You must create a new view, without any more examples, that fetches contents of **config/tasks.yml** and renders those
-tasks into html table under url **/goodcode/tasks/**. Even though this is a simple assignment, remember to make it
-using the MVC architecture! Don't skip steps just because it would be easier in this particular assignment. All letters from MVC must be used. Also the previous code must still work as it did before.
-
-Contents example to put into **config/tasks.yml**:
-```yaml
-tasks:
-  - label: Create model
-    deadline: first
-  - label: Create controller
-    deadline: second
-  - label: Create view
-    deadline: third
-```
-
-You can load the yaml into an array in php using following code snippet:
-```php
-$kernel = \kernel::getInstance();
-$data = $kernel->yaml_read($kernel->expand('{path:config}/tasks.yml'));
-```
-
-Hint: adding class **table** to the table in html makes it bit prettier to start with:
-```html
-<table class="table">
-...
-```
