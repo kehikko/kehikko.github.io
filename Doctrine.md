@@ -3,13 +3,13 @@
 
 # Doctrine
 
-How to use databases via [Doctrine](http://docs.doctrine-project.org/) in this framework.
+How to use databases via [Doctrine](http://docs.doctrine-project.org/) in kehikko.
 
 Supports:
 * [SQL Entity Manager](#sql)
 * [MongoDB Document Manager](#mongodb)
 
-This document only describes configuration and best practices of using Doctrine with this framework.
+This document only describes configuration and best practices of using Doctrine with kehikko.
 At least some basic knowledge of SQL and/or MongoDB and Doctrine is required.
 
 # SQL
