@@ -82,7 +82,7 @@ It is recommended to write simple entity classes without extending them example
 with `\Core\Module` so it is easier to transfer them to other systems if needed.
 That said:
 * If entity class needs `kernel`, it should be requested using `kernel::getInstance()`
-* If entity class needs *Entity Manager*, it should be requested using global function `get_entity_manager()`
+* If entity class needs *Entity Manager*, it should be requested using global function `em()`
 
 Try to avoid doing either.
 
@@ -93,13 +93,12 @@ class TestController extends Controller
 {
     public function testAction()
     {
-        $em = \get_entity_manager();
-        $repository = $em->getRepository('MyEntity');
+        $repository = em()->getRepository('MyEntity');
         $my_entities = $repository->findAll();
         ...
         $my_entity = new MyEntity();
-        $em->persist($my_entity);
-        $em->flush();
+        em()->persist($my_entity);
+        em()->flush();
         ...
     }
 }
@@ -110,13 +109,12 @@ class MyClass extends \Core\Module
 {
     public function doSomething()
     {
-        $em = \get_entity_manager();
-        $repository = $em->getRepository('MyEntity');
+        $repository = em()->getRepository('MyEntity');
         $my_entities = $repository->findAll();
         ...
         $my_entity = new MyEntity();
-        $em->persist($my_entity);
-        $em->flush();
+        em()->persist($my_entity);
+        em()->flush();
         ...
     }
 }
@@ -174,13 +172,12 @@ class TestController extends Controller
 {
     public function testAction()
     {
-        $dm = \get_document_manager();
-        $repository = $dm->getRepository('MyEntity');
+        $repository = dm()->getRepository('MyEntity');
         $my_entities = $repository->findAll();
         ...
         $my_entity = new MyEntity();
-        $dm->persist($my_entity);
-        $dm->flush();
+        dm()->persist($my_entity);
+        dm()->flush();
         ...
     }
 }
@@ -191,13 +188,12 @@ class MyClass extends \Core\Module
 {
     public function doSomething()
     {
-        $dm = \get_document_manager();
-        $repository = $dm->getRepository('MyEntity');
+        $repository = dm()->getRepository('MyEntity');
         $my_entities = $repository->findAll();
         ...
         $my_entity = new MyEntity();
-        $dm->persist($my_entity);
-        $dm->flush();
+        dm()->persist($my_entity);
+        dm()->flush();
         ...
     }
 }
