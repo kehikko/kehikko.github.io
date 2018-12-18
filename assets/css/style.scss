@@ -27,6 +27,10 @@ header {
     display: inline;
 }
 
+.header-title sup {
+    color: #008ad0;
+}
+
 .header-description {
     margin: 0;
     margin-bottom: 20px;
@@ -60,6 +64,10 @@ nav a, nav button {
     outline: none;
     margin: 0;
     background: transparent;
+}
+
+nav button>a {
+    padding: 0;
 }
 
 nav a:hover, nav button:hover {
