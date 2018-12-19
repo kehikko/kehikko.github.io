@@ -1,13 +1,13 @@
 <nav>
-  {% if page.dir == '/v1/' %}
+  {% if version == 'v1' %}
   {% include navigation-v1.html %}
   {% endif %}
-  {% if page.dir == '/v2/' %}
+  {% if version == 'v2' %}
   {% include navigation-v2.html %}
   {% endif %}
   <div id="version-select" class="dropdown">
     <button>
-      {{ page.dir | remove: '/' }}
+      {{ version }}
     </button>
     <div class="dropdown-content">
       <a href="{{ site.url }}/v1/">
