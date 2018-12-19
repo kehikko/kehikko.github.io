@@ -66,8 +66,13 @@ nav a, nav button {
     background: transparent;
 }
 
+nav .dropdown-content>a {
+    border-top: 1px solid #007ebf;
+}
+
 nav button>a {
     padding: 0;
+    border-bottom: 0;
 }
 
 nav a:hover, nav button:hover {
@@ -99,4 +104,9 @@ nav .dropdown-content a {
 
 nav .dropdown:hover .dropdown-content {
     display: block;
+}
+
+nav #version-select {
+    float: right;
+    margin-right: 20px;
 }
