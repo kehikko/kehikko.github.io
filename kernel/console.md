@@ -1,0 +1,6 @@
+---
+---
+
+# Console
+
+To be written.

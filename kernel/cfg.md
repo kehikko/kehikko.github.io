@@ -3,9 +3,36 @@
 
 # Configuration
 
+**TODO: this is a stub**
+
 ## Files
 
 **TODO: remember to write about pointing to other configuration options**
+
+## Cache
+
+Configuration can be cached on system level. This is separate from [cache](cache) meant for application
+and does not use the same mechanics. Instead configuration cache file is written either using PHP's built-in
+*json*-functions or *igbinary*-extension if it is available.
+
+Configuration cache file is created by running `./kehikko kernel:cache:config` in project root.
+This command will print a *NOTICE*-level message of where it wrote the file.
+
+After creating cache file, configuration must be initialized manually to use this cached file before any other
+calls to system functions. This is usually done in application entry point.
+
+Example `index.php` that every page load uses:
+
+```php
+<?php
+require_once __DIR__ . '/../vendor/autoload.php';
+/* first argument points to main configuration, second to cache file */
+cfg_init(__DIR__ . '/../config/config.yml',
+         __DIR__ . '/../cache/__kehikko/configuration.cache.json');
+/* normal stuff after this ... */
+```
+
+**Note:** If configuration cache file is not found, normal configuration loading is executed, so it is not harmful trying to load it
 
 ## Functions
 

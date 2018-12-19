@@ -43,7 +43,7 @@ log:
 * ALERT
 * EMERGENCY
 
-## Signalling
+## Signals
 
 Logging functions send one and exactly one signal when any logging function is called ***after*** system configuration has been loaded
 and last after all other methods:
