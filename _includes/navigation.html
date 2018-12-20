@@ -7,13 +7,15 @@
   {% endif %}
   <div id="version-select" class="dropdown">
     <button>
-      {{ version }}
+      <a href="{{ site.url }}/versions">
+        {{ version }}
+      </a>
     </button>
     <div class="dropdown-content">
-      <a href="{{ site.url }}/v1/">
+      <a href="{{ site.url }}/v1">
         v1
       </a>
-      <a href="{{ site.url }}/v2/">
+      <a href="{{ site.url }}/v2">
         v2
       </a>
     </div>
