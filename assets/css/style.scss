@@ -53,16 +53,21 @@ nav {
     overflow: hidden;
 }
 
-nav a, nav button {
+nav button {
+}
+
+nav a {
     color: #fff;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     font-size: 12px;
     font-weight: bold;
     text-align: left;
-    float: left;
+    margin: 0;
+}
+
+nav a, nav button {
     border: none;
     outline: none;
-    margin: 0;
     background: transparent;
 }
 
@@ -71,7 +76,6 @@ nav .dropdown-content>a {
 }
 
 nav button>a {
-    padding: 0;
     border-bottom: 0;
 }
 
