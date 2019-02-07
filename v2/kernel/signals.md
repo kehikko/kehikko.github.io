@@ -3,8 +3,11 @@
 
 # Signals
 
-Kehikko supports signalling which can be used to catch signals emitted from anywhere
-else in the code without modifications to that part of the code.
+Kehikko supports signalling.
+Sending end must call `emit()` to send a signal.
+Receiving end must hook into the signal in configuration.
+
+**Note:** So far there is no way to hook into signals in the run time
 
 ## Catching signals
 
@@ -51,8 +54,6 @@ $o->generateNewSignal([1,2,3]);
 /* send an error email */
 log_emergency('Error!');
 ```
-
-**Note:** So far there is no way to hook into signals in the run time
 
 **See also:** [Read more about how *calls* can be used](calls)
 
