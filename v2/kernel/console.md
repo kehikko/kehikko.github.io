@@ -41,7 +41,7 @@ commands:
 
 **See also:** [Read more about how *calls* can be used](calls)
 
-These commands will appear in command line tool `./kehikko` (executed in project root) as following commands:
+These commands will appear in command line tool `./vendor/bin/kehikko` (executed in project root) as following commands:
 
 * `kernel:cache:clear`
 * `kernel:cache:config`
@@ -83,7 +83,7 @@ commands:
 
 #### Options
 
-Arguments are defined for each command individually under `options` section.
+Options are defined for each command individually under `options` section.
 Each argument requires `description` and either `short_name` or `long_name`.
 
 Optional specifiers for options are:
