@@ -5,6 +5,27 @@
 
 **Note:** Following examples require *composer* to be installed.
 
+## Easy install
+
+Just use *composer* to create new project:
+
+```sh
+composer create-project -s dev kehikko/kehikko project_name
+cd project_name
+```
+
+Now run command `./kehikko` to see available commands:
+
+```sh
+./kehikko
+```
+
+Start serving:
+
+```sh
+php -S localhost:8080 web/index.php
+```
+
 ## Manual installation
 
 ### Base system with command-line only support
