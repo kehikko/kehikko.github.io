@@ -7,6 +7,13 @@
 
 This document describes how to make calls to code from configuration and routing (and some other places too).
 
+## Return value check
+
+Call return value check can be defined either giving `success` or `fail` in call definition.
+Either one can be a string or an array of strings that define type(s) of acceptable return value(s).
+
+**See:** [validation](Validation) for list of accepted types.
+
 ## Examples
 
 ### Class
@@ -31,35 +38,42 @@ class Test
     public function helloWorld()
     {
         echo "Hello World\n";
+        return 0.1;
     }
 
     public function yourNameIs($name)
     {
         echo "Your name is $name\n";
+        return new DateTime();
     }
 }
 ```
 
-Call a method that would simply echo `Hello World`:
+Call a method that would simply echo `Hello World` and check that it returns a float or int:
 
 ```yaml
 call: Test\Test@helloWorld
+success:
+  - int
+  - float
 ```
 
-More advanced call to a method that would echo `Your name is Chandler`:
+More advanced call to a method that would echo `Your name is Chandler` and check that it does return an object:
 
 ```yaml
 call: Test\Test@yourNameIs
 args:
   - Chandler
+success: object
 ```
 
-Using keyed arguments, this would also echo `Your name is John Doe`:
+Using keyed arguments, this would also echo `Your name is John Doe` and check that it does not return `null`:
 
 ```yaml
 call: Test\Test@yourNameIs(my_name)
 args:
   my_name: John Doe
+fail: 'null' # note that this is in quotes so that it will be parsed as string
 ```
 
 Forcing a call without arguments, in this case an exception would occur:

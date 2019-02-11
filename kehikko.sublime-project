@@ -1,7 +1,11 @@
 {
-  "folders": [{
-    "path": "."
-  }, {
-    "path": "../kehikko"
-  }]
+	"folders":
+	[
+		{
+			"path": "/home/aehparta/www/kehikko"
+		},
+		{
+			"path": "."
+		}
+	]
 }
