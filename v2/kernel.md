@@ -33,6 +33,10 @@ added with configuration.
 
 Using signalling.
 
+## [Validation ⇢](validation)
+
+Validating input.
+
 ## Other related documentation
 
 ### [Profiling 🔗](https://github.com/kehikko/profiler){:target="_blank"}

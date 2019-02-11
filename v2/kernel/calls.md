@@ -12,7 +12,7 @@ This document describes how to make calls to code from configuration and routing
 Call return value check can be defined either giving `success` or `fail` in call definition.
 Either one can be a string or an array of strings that define type(s) of acceptable return value(s).
 
-**See:** [validation](Validation) for list of accepted types.
+**See:** [Validation](validation) for list of accepted types.
 
 ## Examples
 
