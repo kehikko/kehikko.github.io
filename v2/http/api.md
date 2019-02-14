@@ -9,6 +9,8 @@
 
 Define accepted values.
 
+#### Example
+
 ```yaml
 api_request:
   pattern: /api/request
