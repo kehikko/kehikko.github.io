@@ -114,7 +114,7 @@ Default timezone used when `type` is `datetime`.
 ### type *(string)*
 
 `type` is a string that defines validator for API request value.
-Same validator types can be applied as for [`🔗tool_validate()`](/v2/kernel/validation)
+Same validator types can be applied as for [`🔗validate()`](/v2/kernel/validation)
 as it is directly called when validating API data.
 
 Define multiple types using `|` as separator.
