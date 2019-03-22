@@ -7,7 +7,7 @@ Validating input.
 
 ## Functions
 
-### tool_validate($type, &$value, $convert = true, $extra = null)
+### validate($type, &$value, $convert = true, $extra = null)
 
 Validate `$value` according to `$type`.
 If `$convert` is `true` then `$value` is modified to be requested type if it is not.
