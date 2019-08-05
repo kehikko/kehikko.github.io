@@ -118,7 +118,8 @@ Same validator types can be applied as for [`🔗validate()`](/v2/kernel/validat
 as it is directly called when validating API data.
 
 Define multiple types using `|` as separator.
-This can lead to undefined behaviour if using too many different types with other keywords.
 Most usual use-case is allowing `null` or `bool` with some other type.
 Even in this case with example the keyword `accept` you need to define
 `null`, `true` or `false` as accepted value besides others.
+
+Defining too many multiple types at once can lead to undefined when combined with other keywords.
