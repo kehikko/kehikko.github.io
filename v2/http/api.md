@@ -122,4 +122,4 @@ Most usual use-case is allowing `null` or `bool` with some other type.
 Even in this case with example the keyword `accept` you need to define
 `null`, `true` or `false` as accepted value besides others.
 
-Defining too many multiple types at once can lead to undefined when combined with other keywords.
+Defining too many multiple types at once can lead to undefined behaviour when combined with other keywords.
