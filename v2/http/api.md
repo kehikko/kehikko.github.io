@@ -5,6 +5,8 @@
 
 ## Keywords
 
+**Note:** When a keyword accepts a call, that call must return one of the other accepted types.
+
 ### accept *(array or call)*
 
 Define accepted values.
@@ -35,6 +37,9 @@ api_request:
 Define formatting of a value. This applies only when outputting values, not for input (*create* or *update*).
 For types `string`, `int`, `float` and `number` [`🔗sprintf`](http://php.net/manual/en/function.sprintf.php) is used.
 `datetime` uses php's [`🔗DateTime::format`](http://php.net/manual/en/datetime.format.php).
+
+**Note:** Formatting is done after validating output value according to `type`, so the output might not be valid
+according to `type` after formatting.
 
 #### Example: float
 
@@ -79,7 +84,7 @@ api_request:
 
 Define minimum and maximum value (for numbers) or length (for strings).
 
-### required *(bool or array)*
+### required *(bool, array or call)*
 
 Define value requirement for each request mode.
 Mode can be *create (POST)*, *update (PUT/PATCH)* or *read (GET)*.
@@ -107,7 +112,7 @@ api_request:
         read: false
 ```
 
-### timezone *(string)*
+### timezone *(string or call)*
 
 Default timezone used when `type` is `datetime`.
 
@@ -123,3 +128,5 @@ Even in this case with example the keyword `accept` you need to define
 `null`, `true` or `false` as accepted value besides others.
 
 Defining too many multiple types at once can lead to undefined behaviour when combined with other keywords.
+
+**Note:** This keyword *cannot* use calls to fetch it's value.

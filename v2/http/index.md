@@ -5,11 +5,11 @@
 
 Documentation for kehikko v2 http functionality.
 
-## [API ⇢](http/api)
+## [API ⇢](api)
 
 Creating RESTful APIs.
 
-## [Routing ⇢](http/routing)
+## [Routing ⇢](routing)
 
 Routing http requests.
 
