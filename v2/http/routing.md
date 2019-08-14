@@ -3,4 +3,8 @@
 
 # Routing
 
-To be written.
+## Keywords
+
+### pattern *(string)*
+
+
