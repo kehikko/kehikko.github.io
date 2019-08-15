@@ -84,7 +84,7 @@ call: Test\Test@(false)
 
 ### Function
 
-Calling a function with kehikko system built-in `null`, `true` and `false`:
+Calling a function with kehikko system built-in parsing of strings `null`, `true` and `false` to their respective types:
 
 ```yaml
 call: var_dump(null,true,false)

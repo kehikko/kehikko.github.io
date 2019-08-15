@@ -5,12 +5,11 @@
   {% if version == 'v2' %}
   {% include navigation-v2.html %}
   {% endif %}
+  {% if version != 'versions' %}
   <div id="version-select" class="dropdown">
-    <button>
-      <a href="{{ site.url }}/versions">
-        {{ version }}
-      </a>
-    </button>
+    <a href="{{ site.url }}/versions">
+      {{ version }}
+    </a>
     <div class="dropdown-content">
       <a href="{{ site.url }}/v1">
         v1
@@ -20,4 +19,12 @@
       </a>
     </div>
   </div>
+  {% else %}
+  <a href="{{ site.url }}/v1">
+    Kehikko v1 documentation
+  </a>
+  <a href="{{ site.url }}/v2">
+    Kehikko v2 documentation
+  </a>
+  {% endif %}
 </nav>

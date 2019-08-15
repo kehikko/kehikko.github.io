@@ -50,22 +50,16 @@ header {
 
 nav {
     background: #008ad0;
-    overflow: hidden;
-}
-
-nav button {
 }
 
 nav a {
+    display: inline-block;
     color: #fff;
     padding: 10px;
     font-size: 12px;
     font-weight: bold;
     text-align: left;
     margin: 0;
-}
-
-nav a, nav button {
     border: none;
     outline: none;
     background: transparent;
@@ -75,22 +69,14 @@ nav .dropdown-content>a {
     border-top: 1px solid #007ebf;
 }
 
-nav button>a {
-    border-bottom: 0;
-}
-
-nav a:hover, nav button:hover {
+nav a:hover {
+    color: #fff;
     background: #0c3d91;
     text-decoration: none;
 }
 
-nav button {
-    float: none;
-}
-
 nav .dropdown {
-    float: left;
-    overflow: hidden;
+    display: inline-block;
 }
 
 nav .dropdown-content {
