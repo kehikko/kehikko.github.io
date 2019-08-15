@@ -1,6 +1,0 @@
----
----
-
-# Http
-
-To be written.

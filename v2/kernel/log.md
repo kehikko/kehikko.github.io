@@ -8,6 +8,8 @@ Three logging methods are supported:
 * file: write to file
 * syslog: write to syslog using php's syslog() -function
 
+**Note:** Any other style logging method can be handled how ever you wish by hooking into the signal logging functions send
+
 ## Configuration
 
 Your configuration may change following attributes about logging:
@@ -29,7 +31,6 @@ log:
 ```
 
 **Note:** Default shown as comment  
-**Note:** Any other style logging method can be handled how ever you wish by hooking into the signal logging functions send
 
 ### Levels
 
